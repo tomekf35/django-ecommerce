@@ -41,17 +41,20 @@
             <ul class="navbar-nav">
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">
+                    <p class="nav-link">Hello, {{ user.username }}</p>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" href="{% url 'logout' %}">Logout</a>
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
                     <a class="btn btn-light me-2" href="{% url 'login' %}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" href="#">Signup</a>
+                    <a class="btn btn-outline-light" href="{% url 'accounts:signup' %}">Signup</a>
                 </li>
                 {% endif %}
             </ul>
