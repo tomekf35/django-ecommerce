@@ -22,5 +22,5 @@ class Product(models.Model):
     stock = models.PositiveIntegerField()
     
     def __str__(self):
-        return f'{self.category} {self.name}'
+        return f'{self.category} {self.brand} {self.model}'
     

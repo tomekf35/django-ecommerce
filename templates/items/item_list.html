@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All Products
+{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex flex-wrap justify-content-left p-2 gap-4">
+    {% for product in products %}
+
+    <div class="card border-dark mb-3" style="width: 15rem;">
+        <img src="{{ product.image.url }}" class="card-img-top">
+        <div class="card-header">${{ product.price }}</div>
+        <div class="card-body">
+            <h4 class="card-title">{{ product.brand }}</h4>
+            <p class="card-text">Price: ${{ product.model }}</p>
+            <p class="card-text">{{ product.description }}</p>
+        </div>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
