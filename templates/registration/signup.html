@@ -5,24 +5,27 @@ Signup
 {% endblock %}
 
 {% block content %}
-<form method="POST" class="col-lg-3 m-auto mt-5">
-    {% csrf_token %}
-    <div class="row justify-content-center">
-        <div class="form-group">
-            <label for="username" class="form-label mt-1">Username</label>
-            <input type="text" name="username" class="form-control" placeholder="Username">
+<div class="container">
+    <form method="POST" class="col-lg-3 m-auto mt-4">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <label for="username" class="form-label mt-1">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="password1" class="form-label mt-1">Password</label>
+                <input type="password" name="password1" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="password2" class="form-label mt-1">Confirm Password</label>
+                <input type="password" name="password2" class="form-control" placeholder="Password">
+            </div>
+            <span class="input-group-btn mt-2">
+                <button class="btn btn-primary" type="submit">Signup</button>
+            </span>
         </div>
-        <div class="form-group">
-            <label for="password1" class="form-label mt-1">Password</label>
-            <input type="password" name="password1" class="form-control" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="password2" class="form-label mt-1">Confirm Password</label>
-            <input type="password" name="password2" class="form-control" placeholder="Password">
-        </div>
-        <span class="input-group-btn mt-2">
-            <button class="btn btn-primary" type="submit">Signup</button>
-        </span>
-    </div>
-</form>
+    </form>
+</div>
+
 {% endblock %}
