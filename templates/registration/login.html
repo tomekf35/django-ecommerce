@@ -5,11 +5,23 @@ Login
 {% endblock %}
 
 {% block content %}
-<p>Please use following form to log in:</p>
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Login</button>
-</form>
+<div class="container">
+    <form method="POST" class="col-lg-3 m-auto mt-5">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <label for="username" class="form-label mt-1">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label mt-1">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password">
+            </div>
+            <span class="input-group-btn mt-2">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </span>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
