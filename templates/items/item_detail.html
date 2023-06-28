@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{item.model}}
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex">
+    <div class="container col-7">
+        <img src="{{ item.image.url }}" class="card-img-top">
+    </div>
+    <div class="container col-3">
+        <div class="card text-center">
+            <div class="card-header">
+                {{item.brand}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{item.model}}</h5>
+                <p class="card-text">{{item.description}}</p>
+                <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+                2 days ago
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .models import Product
 
@@ -61,3 +61,8 @@ def search_results(request):
     return render(request, 'items/item_list.html', {'products': products, 
                                                     'category': 'Search',
                                                     'query': query})
+
+
+def item_detail(request, pk):
+    item = get_object_or_404(Product, pk=pk)
+    return render(request, 'items/item_detail.html', {'item': item})                                                   
