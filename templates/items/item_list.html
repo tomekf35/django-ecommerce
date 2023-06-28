@@ -5,7 +5,10 @@ All Products
 {% endblock %}
 
 {% block content %}
-
+<div class="container mt-3">
+    <h5>Category: {{ category }}</h5>
+    <hr>
+</div>
 <div class="container d-flex flex-wrap justify-content-left p-2 gap-4">
     {% for product in products %}
 
@@ -19,7 +22,8 @@ All Products
         </div>
         <a href="#" class="btn btn-primary">Add to cart</a>
     </div>
-
+    {% empty %}
+    No products
     {% endfor %}
 </div>
 

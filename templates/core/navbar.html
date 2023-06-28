@@ -18,14 +18,20 @@
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">Category</a>
                     <div class="dropdown-menu">
-                        {% for category in categories %}
-                        <a class="dropdown-item" href="#">{{ category.name }}</a>
-                        {% endfor %}
+                        <a class="dropdown-item" href="{% url 'items:products_rig' %}">Rig</a>
+                        <a class="dropdown-item" href="{% url 'items:products_procesor' %}">Procesor</a>
+                        <a class="dropdown-item" href="{% url 'items:products_gpu' %}">GPU card</a>
+                        <a class="dropdown-item" href="{% url 'items:products_ram' %}">Ram</a>
+                        <a class="dropdown-item" href="{% url 'items:products_motherboard' %}">Motherboard</a>
+                        <a class="dropdown-item" href="{% url 'items:products_ssd' %}">SSD</a>
+                        <a class="dropdown-item" href="{% url 'items:products_psu' %}">PSU</a>
+                        <a class="dropdown-item" href="{% url 'items:products_tower' %}">Tower</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'items:products_all' %}">All</a>
                         <div class="dropdown-divider"></div>
                     </div>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Custom Rig</a>
                 </li>
