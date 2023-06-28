@@ -6,7 +6,11 @@ All Products
 
 {% block content %}
 <div class="container mt-3">
+    {% if category == 'Search' %}
+    <h5>Search results for: "{{ query }}"</h5>
+    {% else %}
     <h5>Category: {{ category }}</h5>
+    {% endif %}
     <hr>
 </div>
 <div class="container d-flex flex-wrap justify-content-left p-2 gap-4">

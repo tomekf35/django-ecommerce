@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.db.models import Q
 from .models import Product
 
 
@@ -52,3 +53,11 @@ def tower_products_view(request):
     products = Product.objects.filter(category__name='Tower')
     return render(request, 'items/item_list.html', {'products': products, 
                                                     'category': 'Tower'})
+    
+    
+def search_results(request):
+    query = request.GET.get('q')
+    products = Product.objects.filter(Q(brand__icontains=query) | Q(model__icontains=query))
+    return render(request, 'items/item_list.html', {'products': products, 
+                                                    'category': 'Search',
+                                                    'query': query})

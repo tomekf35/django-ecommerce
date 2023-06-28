@@ -12,4 +12,5 @@ urlpatterns = [
     path('psu/', views.psu_products_view, name="products_psu"),
     path('tower/', views.tower_products_view, name="products_tower"),
     path('all/', views.all_products_view, name="products_all"),
+    path('search_results/', views.search_results, name='search_results'),
 ]

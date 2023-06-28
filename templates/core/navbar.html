@@ -8,8 +8,8 @@
 
         <div class="collapse navbar-collapse" id="navbarColor01">
 
-            <form class="d-flex ms-2">
-                <input class="form-control form-control-sm me-sm-2" type="search" placeholder="Search">
+            <form method="get" action="{% url 'items:search_results' %}" class="d-flex ms-2">
+                <input class="form-control form-control-sm me-sm-2" name="q" type="search" placeholder="Search">
                 <button class="btn btn-secondary btn-sm my-2 my-sm-0" type="submit">Search</button>
             </form>
 
