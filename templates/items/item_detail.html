@@ -17,10 +17,16 @@
             <div class="card-body">
                 <h5 class="card-title">{{item.model}}</h5>
                 <p class="card-text">{{item.description}}</p>
-                <a href="#" class="btn btn-primary">Buy</a>
-            </div>
-            <div class="card-footer text-body-secondary">
-                2 days ago
+                <p class="card-text">Quantity: {{item.stock}}</p>
+                <p class="card-text">Price: ${{item.price}}</p>
+                <form method="POST" action="{% url 'cart:add_to_cart' item.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" class="form-control" id="quantity" name="quantity" value="1" min="1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@ All Products
                 <p class="card-text">Price: ${{ product.model }}</p>
                 <p class="card-text">{{ product.description }}</p>
             </div>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="{% url 'items:product_detail' product.pk %}" class="btn btn-primary">Details</a>
         </div>
     </a>
 
