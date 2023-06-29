@@ -5,10 +5,23 @@ Cart
 {% endblock %}
 
 {% block content %}
-<h1>Your Cart</h1>
-{% for cart_item in cart_items %}
-<p>{{ cart_item.product }} - Quantity: {{ cart_item.quantity }}</p>
-{% empty %}
-<p>Your cart is empty.</p>
-{% endfor %}
+<div class="container d-flex justify-content-left mt-2">
+    <h3>Total: ${{ total_price }}</h3>
+</div>
+<hr>
+<div class="container flex-row p-2">
+    {% for cart_item in cart_items %}
+    <div class="card border-dark mb-3 p-2" style="width: 300px;">
+        <p>{{ cart_item.product }}</p>
+        <span>Quantity: {{ cart_item.quantity }} Price: ${{ cart_item.product.price }}
+        </span>
+        <form action="{% url 'cart:remove_from_cart' cart_item.id %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-primary btn-sm mt-2">Remove</button>
+        </form>
+    </div>
+    {% empty %}
+    <p>Your cart is empty.</p>
+    {% endfor %}
+</div>
 {% endblock %}
