@@ -6,15 +6,16 @@ Cart
 
 {% block content %}
 <div class="container d-flex justify-content-left mt-2">
-    <h3>Total: ${{ total_price }}</h3>
+    <h3>Cart Total: ${{ total_price }}</h3>
 </div>
 <hr>
 <div class="container flex-row p-2">
     {% for cart_item in cart_items %}
     <div class="card border-dark mb-3 p-2" style="width: 300px;">
         <p>{{ cart_item.product }}</p>
-        <span>Quantity: {{ cart_item.quantity }} Price: ${{ cart_item.product.price }}
-        </span>
+        <span>Unit price: {{cart_item.product.price}}</span>
+        <span>Quantity: {{ cart_item.quantity }}</span>
+        <span>Total: {{cart_item.total_cost }}</span>
         <form action="{% url 'cart:remove_from_cart' cart_item.id %}" method="post">
             {% csrf_token %}
             <button class="btn btn-primary btn-sm mt-2">Remove</button>
